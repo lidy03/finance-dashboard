@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node backend/src/server.js"
-  },
+    "start": "node backend/src/index.js"
+ },
   "keywords": [],
   "author": "",
   "license": "ISC",

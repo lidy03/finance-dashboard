@@ -3,6 +3,7 @@ const router = express.Router();
 const prisma = require('../config/prisma');
 const bcrypt = require('bcryptjs');
 const jwt = require ('jsonwebtoken');
+const authMiddleware = require('../middleware/authmiddleware')
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -21,7 +22,7 @@ router.post('/register', async(req, res)=> {
         const existingUSer = await prisma.user.findUnique({where: { email }});
         
         if(existingUSer){
-            return res.status(409).json({erro: 'Usuário já existe'});
+            return res.status(409).json({error: 'Usuário já existe'});
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -84,6 +85,30 @@ router.post('/login', async (req, res)=> {
     } catch (error){
         console.error('Erro no login:', error);
         res.status(500).json({ error: 'Erro interno no servidor.'});
+    }
+});
+
+router.get('/me', authMiddleware, async(req, res)=>{
+    try{
+        const userId = req.userId;
+        const user = await prisma.user.findUnique({
+            where: { id: userId},
+            select: {
+                id: true,
+                email: true,
+                name:true,
+                createdAt: true,
+                updatedAt: true,
+            },
+        });
+
+        if (!user){
+            return res.status(404).json({error: 'Usuário não encontrado'});
+        }
+        res.status(200).json(user);
+    } catch (error) {
+        console.error('Erro ao buscar dados do usuário:', error);
+        res.status(500).json({erro: 'Erro interno no servidor'});
     }
 });
 

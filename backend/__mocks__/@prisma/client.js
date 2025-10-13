@@ -1,10 +1,9 @@
-const prisma = {
+const mockPrismaInstance= {
     user: {
         // Mock da função findUnique
         findUnique: jest.fn(),
         // Mock da função create
         create: jest.fn(),
-        // Mock de outras funções do User se precisar (ex: delete, findMany)
     },
     // Mock de outros modelos
     expense: {
@@ -13,5 +12,6 @@ const prisma = {
     // Mock de comandos de ciclo de vida do Prisma
     $disconnect: jest.fn(),
 };
+const PrismaClient = jest.fn(() => mockPrismaInstance);
 
-module.exports = prisma;
+module.exports = { PrismaClient };
