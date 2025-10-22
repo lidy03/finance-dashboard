@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node backend/src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +17,24 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2"
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-mocks-http": "^1.17.2"
   },
   "devDependencies": {
     "@types/node": "^24.7.0",
+    "jest": "^30.2.0",
     "prisma": "^6.16.3",
+    "supertest": "^7.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lidy03/finance-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lidy03/finance-dashboard/issues"
+  },
+  "homepage": "https://github.com/lidy03/finance-dashboard#readme"
 }
