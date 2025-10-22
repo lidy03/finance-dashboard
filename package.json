@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "node backend/src/index.js"
- },
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,7 +17,9 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2"
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-mocks-http": "^1.17.2"
   },
   "devDependencies": {
     "@types/node": "^24.7.0",
@@ -36,4 +38,3 @@
   },
   "homepage": "https://github.com/lidy03/finance-dashboard#readme"
 }
-
