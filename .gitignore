@@ -9,3 +9,5 @@ node_modules
 /logs
 /prisma/migrations/
 /generated/
+backend/__mocks__/
+backend/__tests__/
