@@ -6,7 +6,7 @@ const register = async (req, res) => {
     const { name, email, password } = req.body;
 
     if (!email || !password) {
-        return res.status(400).json({ error: 'É necessário inserir email e senha' }); 
+        return res.status(400).json({ error: 'Insira o email e a senha' }); 
     }
 
     try {
