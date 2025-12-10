@@ -23,17 +23,17 @@ app.use(cors({
 app.use(express.json());
 app.use(helmet());
 
-const dataRoutes = require('./src/routes/data.routes');
-const authRoutes = require('./src/routes/auth.routes');
-const expenseRoutes = require ('./src/routes/expenses.routes');
-const categoryRoutes = require('./src/routes/category.routes');
-const contactRoutes = require('./src/routes/contact.routes');
+const dataRoutes = require('./routes/data.routes');
+const authRoutes = require('./routes/auth.routes');
+const expenseRoutes = require ('./routes/expenses.routes');
+const categoryRoutes = require('./routes/category.routes');
+const contactRoutes = require('./routes/contact.routes');
 
 app.use('/api/auth', authRoutes);
-app.use('/api', dataRoutes);
-app.use('/api', expenseRoutes);
-app.use('/api', categoryRoutes);
-app.use('/api', contactRoutes);
+app.use('/api/data', dataRoutes);
+app.use('/api/expenses', expenseRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/contacts', contactRoutes);
 
 app.get('/api', (req, res) =>{
     res.send('API is ready');
