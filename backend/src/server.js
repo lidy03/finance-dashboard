@@ -9,11 +9,6 @@ const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 
-if (!process.env.JWT_SECRET) {
-  console.error('JWT_SECRET não definido. Configure no painel do Render.');
-  process.exit(1);
-}
-
 app.use(cors({
   origin: '*',
   methods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE'],
