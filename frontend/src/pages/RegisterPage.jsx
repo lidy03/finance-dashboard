@@ -11,7 +11,7 @@ const RegisterPage = () => {
         name: '',
         email:'',
         password:'',
-        //confirmPassword:''
+        confirmPassword:''
     });
     
     const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ const RegisterPage = () => {
 
     const handleInputChange = (e) => {
         setFormData({
-            ...FormData,
+            ...formData,
             [e.target.name]: e.target.value
         });
         setError(null);
@@ -52,7 +52,7 @@ const RegisterPage = () => {
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, email, password }),
+                body: JSON.stringify({ name, email, password }),
             });
 
             const data = await response.json();

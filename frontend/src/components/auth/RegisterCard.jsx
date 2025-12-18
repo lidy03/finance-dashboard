@@ -14,11 +14,11 @@ const RegisterCard = ({ formData, handleInputChange, handleSubmit, loading, erro
             <form onSubmit={handleSubmit}>
 
                 <InputField
-                    image={ICONS.username}
+                    image={ICONS.name}
                     type="text"
                     placeholder="Nome de usuário"
                     name="name"
-                    value={formData.username}
+                    value={formData.name}
                     onchange={handleInputChange}
                     disabled={loading}
                 />
