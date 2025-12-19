@@ -1,6 +1,6 @@
 import React from 'react';
 import InputField from '../InputField.jsx';
-import { ICONS } from '../../assets/icons.js';
+import { ICONS } from '../../../../public/assets/icons.js';
 
 const RegisterCard = ({ formData, handleInputChange, handleSubmit, loading, error }) => {
     return (
