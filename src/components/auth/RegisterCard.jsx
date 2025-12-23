@@ -19,7 +19,7 @@ const RegisterCard = ({ formData, handleInputChange, handleSubmit, loading, erro
                     placeholder="Nome de usuário"
                     name="name"
                     value={formData.name}
-                    onchange={handleInputChange}
+                    onChange={handleInputChange}
                     disabled={loading}
                 />
                 <InputField
@@ -28,7 +28,7 @@ const RegisterCard = ({ formData, handleInputChange, handleSubmit, loading, erro
                     placeholder="E-mail"
                     name="email"
                     value={formData.email}
-                    onchange={handleInputChange}
+                    onChange={handleInputChange}
                     disabled={loading}
                 />
                 <InputField
@@ -37,7 +37,7 @@ const RegisterCard = ({ formData, handleInputChange, handleSubmit, loading, erro
                     placeholder="Senha"
                     name="password"
                     value={formData.password}
-                    onchange={handleInputChange}
+                    onChange={handleInputChange}
                     disabled={loading}
                 />
 
