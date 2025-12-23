@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import RegisterCard from "../components/auth/RegisterCard.jsx";
+import RegisterCard from "../../components/auth/RegisterCard.jsx";
 
 
 const RegisterPage = () => {

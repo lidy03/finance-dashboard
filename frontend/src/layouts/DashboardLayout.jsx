@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LayoutDashboard, Wallet, TredingUp, BarChart3, Settings, LogOut, Menu, X, User } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 const Sidebar = ({ currentSection, setCurrentSection, isSidebarOpen, setIsSidebarOpen, user, logout }) => {
     const navItems = [
